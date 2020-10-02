@@ -6,7 +6,7 @@
   --base-color-text: #4a5365;
   --base-color-text-hl: #454b59;
   --base-color-text-title: #546b99;
-  --base-color-text-subtitle: #8a9cc2;
+  --base-color-text-subtitle: #8092b4;
 
   --dark-color: #333f67;
   --dark-color-text: lightsteelblue;
@@ -205,6 +205,15 @@ nav > ul > li {
 nav li.active > a {
   color: var(--primary-color);
 }
+nav li.fund > a {
+  color: #ea8b20;
+}
+nav li.fund > a:hover {
+  color: #e53e3e;
+}
+nav li.fund.active > a {
+  color: #e53e3e;
+}
 
 nav > ul ul {
   display: none;
@@ -358,7 +367,6 @@ p.small {
 .auto-margin {
   margin: auto;
 }
-
 
 .head {
   background-color: var(--primary-color);
@@ -698,5 +706,242 @@ pre > code {
 @media (max-width: 500px) {
   #sfc_graphic {
     width: 100%;
+  }
+}
+
+.text-sm {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.leading-relaxed {
+  line-height: 1.5;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.img-auto-size {
+  width: 100%;
+  height: auto;
+}
+
+.img-load-placeholder {
+  background-color: #607080;
+}
+
+.fund-intro-text {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Funding progress bars. */
+.fund-progress,
+.fund-progress-corporate,
+.fund-progress-individual {
+  height: 0.75rem;
+  /* Prevent whitespace from adding space between bars. */
+  font-size: 0;
+}
+
+.fund-progress-corporate,
+.fund-progress-individual {
+  display: inline-block;
+}
+
+.fund-progress {
+  /* Full bar represents the "empty" state. */
+  background-color: #ddd;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.fund-progress-corporate {
+  /* Bar is on the left side, only round the left corners. */
+  border-radius: 1rem 0 0 1rem;
+}
+
+.fund-progress-individual {
+  /* Bar is on the right side, only round the right corners. */
+  border-radius: 0 1rem 1rem 0;
+}
+
+.fund-progress-legend {
+  font-size: 0.9rem;
+  color: var(--base-color-text-title);
+  /* Prevent individual legend items from wrapping on mobile. */
+  white-space: nowrap;
+}
+
+.fund-progress-legend::before {
+  content: "";
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--color);
+  margin: 0 0.5rem 0 1rem;
+  border-radius: 50%;
+}
+
+.fund-options-table {
+  display: inline-block;
+  padding: 1.5rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 6px;
+  border-collapse: collapse;
+}
+
+@media (max-width: 40rem) {
+  .fund-intro-text {
+    margin-top: 0;
+  }
+
+  .fund-options-table {
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
+  }
+}
+
+.shadow {
+  /* Copied from Tailwind.css. */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.fund-options-table thead {
+  font-weight: 700;
+}
+
+.fund-options-table thead td:nth-child(2) {
+  /* Visually align the "Perks" heading with the list items. */
+  padding-left: 2rem;
+  /* Limit the width of perks to improve readability. */
+  width: 500px;
+}
+
+@media (min-width: 40rem) {
+  .fund-options-table td:first-child {
+    padding-left: 1.5rem;
+  }
+
+  .fund-options-table td:last-child {
+    padding-right: 1.5rem;
+  }
+}
+
+.fund-options-table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: 0.1s filter;
+  /* Required so the filter can change the background color. */
+  background-color: hsl(0, 0%, 100%);
+}
+
+.fund-options-table tbody tr:hover {
+  filter: brightness(96%);
+}
+
+.fund-options-table td:nth-child(2) li {
+  /* Decrease spacing between list items for perks. */
+  margin: 0;
+}
+
+.fund-options-table td:nth-child(3) {
+  /* Center the Choose/Contact us buttons. */
+  text-align: center;
+}
+
+.fund-options-table-level {
+  font-weight: 700;
+}
+
+.fund-options-table-price {
+  color: var(--base-color-text-subtitle);
+}
+
+.sponsors .sponsor {
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+.sponsors .sponsors-platinum .sponsor {
+  height: 130px;
+}
+
+.sponsors .sponsors-gold .sponsor {
+  height: 100px;
+}
+
+.sponsors img {
+  width: inherit;
+  height: 100%;
+}
+
+.sponsors .flex {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.figure {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.figure-caption {
+  margin-top: 1rem;
+  color: var(--base-color-text-title);
+  text-align: center;
+}
+
+.button {
+  padding: 0.625rem 1rem;
+  background-color: var(--primary-color);
+  color: hsl(0, 0%, 100%);
+  border-radius: 4px;
+  transition: 0.1s filter;
+  white-space: nowrap;
+}
+
+.button:hover {
+  color: hsl(0, 0%, 100%);
+  filter: brightness(120%);
+
+}
+
+.button:active {
+  filter: brightness(85%);
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.fund-options-table-popular {
+  background-color: #dfefff !important;
+}
+
+@media (max-width: 40rem) {
+  /* Decrease font sizes on mobile to fit more easily on a single line. */
+  .fund-stats-primary {
+    font-size: 1.1rem;
+  }
+
+  .fund-stats-secondary {
+    font-size: 1rem;
   }
 }
