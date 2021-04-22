@@ -65,7 +65,7 @@ description = "Download layout"
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 1rem;
   }
 
   .version-overview h2 {
@@ -115,12 +115,77 @@ description = "Download layout"
 
 <div class="container">
 
-  <div class="flex responsive eqsize">
-    <div class="version-overview">
-      <img src="{{ 'assets/download/godot_logo.svg' | theme }}" alt="" width="200" height="200" alt="">
-      <h2>Godot <em>{{stable_version}}</em></h2>
-      <i class="date">released April 21, 2021</i>
-      <p></p>
+  <div class="flex grid" style="grid-template-columns: repeat(auto-fill, minmax(427px, 1fr))">
+    <div>
+      <div class="version-overview" style="margin-bottom: 2.5rem">
+        <img src="{{ 'assets/download/godot_logo.svg' | theme }}" alt="" width="200" height="200" alt="">
+        <h2>Godot <em>{{stable_version}}</em></h2>
+        <i class="date">released April 21, 2021</i>
+      </div>
+
+      <div class="extras">
+        <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/Godot_v{{stable_version}}-stable_export_templates.tpz">
+          <div class="base-padding">
+            <h3>Export templates (standard)</h3>
+            <p>Used to export your games to all supported platforms.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/mono/Godot_v{{stable_version}}-stable_mono_export_templates.tpz">
+          <div class="base-padding">
+            <h3>Export templates (Mono / C#)</h3>
+            <p>
+              Used to export your C# games to the supported platforms.
+              Currently, the C# version can export to desktop platforms (Linux, macOS and Windows), Android, iOS, and HTML5/WebAssembly.
+            </p>
+          </div>
+        </a>
+
+        <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/godot-lib.{{stable_version}}.stable.release.aar">
+          <div class="base-padding">
+            <h3>AAR library for Android plugins (standard)</h3>
+            <p>Use it to develop Android plugins in Java or Kotlin using the Godot API.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/mono/godot-lib.{{stable_version}}.stable.mono.release.aar">
+          <div class="base-padding">
+            <h3>AAR library for Android plugins (Mono / C#)</h3>
+            <p>Use it to develop Android plugins in Java or Kotlin using the Godot API.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://docs.godotengine.org/en/stable/getting_started/step_by_step/">
+          <div class="base-padding">
+            <h3>Learn Godot</h3>
+            <p>Learning how to use Godot with the Step by Step tutorial.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://godotengine.org/asset-library/asset?category=10&support[official]=1">
+          <div class="base-padding">
+            <h3>Demos</h3>
+            <p>Example projects to get you started.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/godotengine/godot-blender-exporter" class="base-padding card">
+          <div>
+            <h3>Blender ESCN exporter</h3>
+            <p>
+              Blender add-on to export scenes to Godot's scene format directly.<br>
+              Godot also supports glTF 2.0 and OBJ.
+            </p>
+          </div>
+        </a>
+
+        <a href="https://downloads.tuxfamily.org/godotengine/" class="base-padding card">
+          <div>
+            <h3>Old Godot downloads</h3>
+            <p>Looking for the previous stable releases? They're here!</p>
+          </div>
+        </a>
+      </div>
     </div>
 
     <div>
@@ -175,72 +240,6 @@ description = "Download layout"
   </div>
 
   <div class="flex responsive eqsize padded">
-    <div class="extras">
-
-      <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/Godot_v{{stable_version}}-stable_export_templates.tpz">
-        <div class="base-padding">
-          <h3>Export templates (standard)</h3>
-          <p>Used to export your games to all supported platforms.</p>
-        </div>
-      </a>
-
-      <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/mono/Godot_v{{stable_version}}-stable_mono_export_templates.tpz">
-        <div class="base-padding">
-          <h3>Export templates (Mono / C#)</h3>
-          <p>
-            Used to export your C# games to the supported platforms.
-            Currently, the C# version can export to desktop platforms (Linux, macOS and Windows), Android, iOS, and HTML5/WebAssembly.
-          </p>
-        </div>
-      </a>
-
-      <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/godot-lib.{{stable_version}}.stable.release.aar">
-        <div class="base-padding">
-          <h3>AAR library for Android plugins (standard)</h3>
-          <p>Use it to develop Android plugins in Java or Kotlin using the Godot API.</p>
-        </div>
-      </a>
-
-      <a class="card" href="https://downloads.tuxfamily.org/godotengine/{{stable_version}}/mono/godot-lib.{{stable_version}}.stable.mono.release.aar">
-        <div class="base-padding">
-          <h3>AAR library for Android plugins (Mono / C#)</h3>
-          <p>Use it to develop Android plugins in Java or Kotlin using the Godot API.</p>
-        </div>
-      </a>
-
-      <a class="card" href="https://docs.godotengine.org/en/stable/getting_started/step_by_step/">
-        <div class="base-padding">
-          <h3>Learn Godot</h3>
-          <p>Learning how to use Godot with the Step by Step tutorial.</p>
-        </div>
-      </a>
-
-      <a class="card" href="https://godotengine.org/asset-library/asset?category=10&support[official]=1">
-        <div class="base-padding">
-          <h3>Demos</h3>
-          <p>Example projects to get you started.</p>
-        </div>
-      </a>
-
-      <a href="https://github.com/godotengine/godot-blender-exporter" class="base-padding card">
-        <div>
-          <h3>Blender ESCN exporter</h3>
-          <p>
-            Blender add-on to export scenes to Godot's scene format directly.<br>
-            Godot also supports glTF 2.0 and OBJ.
-          </p>
-        </div>
-      </a>
-
-      <a href="https://downloads.tuxfamily.org/godotengine/" class="base-padding card">
-        <div>
-          <h3>Old Godot downloads</h3>
-          <p>Looking for the previous stable releases? They're here!</p>
-        </div>
-      </a>
-
-    </div>
-
     <div class="text-center base-padding">
       <img class="flex-center dark-invert" src="{{ 'assets/download/dl_icon_github.png' | theme }}" width="200" height="200" alt="">
       <p>
@@ -251,7 +250,8 @@ description = "Download layout"
       <p>
         New features are always available to use and test, without the need of
         having to wait for the next major release. Compiling Godot from source
-        is <em>very easy</em> and the process is well-documented for each platform.
+        is <em>easy</em> and
+        <a href="https://docs.godotengine.org/en/latest/development/compiling/index.html">the process is well-documented for each platform</a>.
         To obtain the source code, please visit the
         <a href="https://github.com/godotengine/godot">GitHub project page</a>.
       </p>
